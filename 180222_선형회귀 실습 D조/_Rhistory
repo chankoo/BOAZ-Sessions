@@ -1,0 +1,216 @@
+bank = read.table("clipboard", head =T)
+head(bank)
+m1 = (Revenue~Assets,data = bank)
+m1 = lm(Revenue~Assets,data = bank)
+summary(m1)
+plot(m1)
+plot(Assets,Revenue)
+plot(Assets,Revenue,data=bank)
+plot(bank$Assets,bank$Revenue)
+bank = read.table("clipboard", head =T)
+head(bank)
+plot(bank$Assets,bank$Revenue)
+m1 = lm(Revenue~Assets,data = bank)
+abline(m1)
+abline(m1,col=4)
+summary(m1)
+plot(m1)
+summary(m1)
+anova(m1)
+?pf
+pf(66.967,1,62)
+pf(66.967,62,1)
+df(66.967,1,62)
+bank = read.table("clipboard", head =T)
+head(bank)
+plot(bank$Assets,bank$Revenue)
+m1 = lm(Revenue~Assets,data = bank)
+abline(m1,col=4)
+summary(m1)
+abline(m1,col=2)
+plot(m1)
+plot(m1,c(2,4))
+y<-matrix(c(1,2,3,4),nrow=2,ncol=2)
+y
+y
+y<-matrix(c(1,2,3,4),nrow=2)
+y
+y<-matrix(c(1,2,3,4),ncol=2)
+y
+y[,2]
+y<-matrix(nrow=2,ncol=2)
+y[1,1]<-1
+y[2,1]<-2
+y[1,2]<-3
+y[2,2]<-4
+y
+m<-matrix(c(1,2,3,4,5,6),nrow=2,byrow=T)
+m
+y%*%y
+y
+y%*%y
+3*y
+y+y
+z<-matrix(c(1,2,3,4,1,1,0,0,1,0,1,0),nrow=4)
+z
+z[,2:3]
+y<-matrix(c(11,21,31,12,22,32),nrow=3)
+y
+x<-matrix(c(1,2,3,2,3,4),nrow=3,ncol=2)
+x
+x[x[,2]>=3,]
+x=rnorm(500,0,0.1)
+acf(x)
+pacf(x)
+x=rnorm(500,0,0.1);x
+acf(x)
+pacf(x)
+n=500 ;e=rnorm(n,0,0.1)
+x=vector("numeric",length = n+1)
+x[1] =0
+for(i in 1:n)
+x[i+1] = 0.7*x[i]+e[i]
+new_x = x[-1]
+acf(new_x)
+pacf(new_x)
+xt=new_x[-1]
+xt_1=new_x[-500]
+plot(xt_1,xt)
+length(new_x)
+length(xt_1)
+boaz<- '보아즈 사랑합니다';boaz
+install.packages("doBy")
+library(doBy)
+summary(iris)
+summaryBy(Sepal.Width ~ Species, iris)
+summaryBy(Sepal.Width + Sepal.Length ~ Species, iris) # Sepal.width와 Sepal.Length를 Species에 따라서 살펴보기
+orderBy(~ Sepal.Width, iris) # Sepal.Width 오름차순
+head(orderBy(~ Sepal.Width, iris)) # Sepal.Width 오름차순
+orderBy(~ Species + Sepal.Width, iris) # 모든 데이터를 Species, Sepal.Width 순으로 정렬 먼저 Species로 정렬된 후 Sepal.Width로
+head(orderBy(~ Species + Sepal.Width, iris))
+order(iris$Sepal.Width) # R에 기본적으로 내장된 order()함수. 주어진 값들을 정렬했을 때의 색인을 순서대로 반환.
+iris[order(iris$Sepal.Width),]
+head(iris[order(iris$Sepal.Width),])
+sampleBy(~Species, frac=0.1, data=iris) #10%확률로, 임의로 샘플추출
+subset(iris, select= Sepal.Length,Species =="versicolor")
+subset(iris, select=-c(Sepal.Length),Species =="versicolor")
+irisN = lapply(split(iris,iris$Species),order)
+irisN
+?orderBy
+oderBy(~Species+Petal.Width,iris)
+orderBy(~Species+Petal.Width,iris)
+orderBy(~Species+Petal.Width,iris)
+orderBy(~Species-Petal.Width,iris)
+Iris <- orderBy(~Species-Petal.Width,iris)
+Iris2 <- orderBy(~Species-Petal.Width,iris)
+iris2 <- orderBy(~Species-Petal.Width,iris)
+setosa_petal = iris2[iris2$Species=="setosa"][,c(Petal.Width,Petal.Length)]
+iris2[iris2$Species=="setosa"]
+str(iris2)
+iris2[Species=="setosa"]
+iris$Species=="setosa"
+iris2[iris$Species=="setosa"]
+iris2[,iris$Species=="setosa"]
+iris2[iris$Species=="setosa",]
+iris2[iris$Species=="setosa",][,c(Petal.Width,Petal.Length)]
+iris2[iris$Species=="setosa",][,c('Petal.Width','Petal.Length')]
+setosa_petal = iris2[iris2$Species=="setosa",][,c('Petal.Width','Petal.Length')]
+setosa_petal
+versicolor_petal = iris2[iris2$Species=='versicolor',][,c('Petal.Width','Petal.Length')]
+viginica_petal = iris2[iris2$Species=="viginica",][,c('Petal.Width','Petal.Length')]
+iris2 <- orderBy(~Species-Petal.Width,iris)
+library(doBy)
+iris2 <- orderBy(~Species-Petal.Width,iris)
+str(iris2)
+iris2
+setosa_petal = iris2[iris2$Species=="setosa",][,c('Petal.Width','Petal.Length')]
+setosa_petal
+getwd()
+setwd("C:/Users/100/Desktop/BOAZ/세션자료/선형회귀 실습 D조")
+movie_df <- read.csv("movie_data.csv", header = T, stringsAsFactors = F)
+str(movie_df)
+getwd()
+setwd("C:/Users/100/Desktop/BOAZ/세션자료/선형회귀 실습 D조")
+dum <- read.csv("dummy.csv", header = T, stringsAsFactors = F)
+ko <- NULL
+ameri <- NULL
+for (i in 1:nrow(dum)){
+if (dum[i, 3] == "한국")
+ko <- append(ko, 1)
+else
+ko <- append(ko, 0)
+if (dum[i, 3] == "미국")
+ameri <- append(ameri, 1)
+else
+ameri <- append(ameri, 0)
+}
+Nation <- cbind(ko, ameri)
+Nation
+dum <- read.csv("dummy.csv", header = T, stringsAsFactors = F)
+genre_df <- NULL
+x <- c("액션", "어드벤처", "범죄", "스릴러")
+for (x_genre in x){
+col <- NULL
+for (i in 1:nrow(dum)){
+gen <- unlist(strsplit(dum[i, 2], ","))
+gen <- gsub(",", "", gen)
+wh <- which(gen == x_genre)
+if (length(wh) == 1)
+col <- append(col, 1)
+else
+col <- append(col, 0)
+}
+genre_df <- cbind(genre_df, col)
+}
+colnames(genre_df) <- x
+genre_df
+gra <- model.matrix(~ grade, data=dum)[,-1]
+gra
+genre_df
+movie_df <- read.csv("movie_data.csv", header = T, stringsAsFactors = F)
+str(movie_df)
+lm_movie_df <- movie_df[,-1] # -1의 이유 : title은 회귀분석에서 필요없기 때문
+model <- lm(first_week_audience ~ lm_movie_df$first_day_screen+lm_movie_df$drama
+, data = lm_movie_df) # first_day_screen 과 drama를 설명변수로 사용
+model
+vif(model)
+library(car)
+vif(model)
+lm_movie_df$drama
+library(corrplot)
+install.packages('corrplot')
+library(corrplot)
+summary(model)
+model <- lm(first_week_audience~., data = lm_movie_df)
+summary(model)
+vif(model)
+corr_mat <- cor(movie_df[,3:ncol(movie_df)])
+corrplot(corr_mat)
+summary(lm_model2)
+summary(lm_model)
+par(mfrow=c(2,2))
+plot(model)
+outlier.test(model)
+outlier.test(model)
+out_movie_df <- lm_movie_df[c(-571,-569,-459,-549,-532),]
+model <- lm(first_week_audience~., data = out_movie_df)
+model
+summary(model)
+par(mfrow=c(2,2))
+plot(model)
+library(MASS)
+bc <- boxcox(model)
+par(mfrow=c(1,1))
+bc <- boxcox(model)
+lambda <- bc$x[which.max(bc$y)]
+lambda
+full_model <- lm(first_week_audience^lambda ~ . , data = out_movie_df)
+summary(full_model)
+plot(full_model)
+reduced_model <- step(full_model, direction = "backward") #forward, stepwise
+test_df <- read.csv("test_data.csv", header=T)
+value <- test_df[2] #실제 test data값 저장
+test_df <- test_df[,c(-1,-2)]
+pred <- predict(reduced_model, test_df)^(1/lambda)
+result <- cbind(value, pred)
+result
